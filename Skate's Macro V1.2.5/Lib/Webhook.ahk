@@ -9586,7 +9586,6 @@ totalfish := 0
 catchStreak := 0
 bestCatchStreak := 0
 successRate := 0
-SetTimer, CheckForDeath, 6000 
 CheckForDeath:
     ScriptDir := A_ScriptDir
     ImagePath := ScriptDir . "\died.png"
