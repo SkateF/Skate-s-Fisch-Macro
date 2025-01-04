@@ -7,9 +7,9 @@ ConfigFile := A_ScriptDir . "\Settings.ini"
 msgbox % ConfigFile
 ; Toggle variables for embed fields
 IniRead, Webhook, %ConfigFile%, webhook, Webhook, false
+Webhook := %Webhook%
 
-
-if (Webhook = "false") {
+if (Webhook = false) {
     ExitApp  
 }
 
@@ -179,25 +179,25 @@ z::
 
     embed := "{""embeds"":[{""title"":""Fishing Update"",""fields"":["
 
-    if (ShowFishCaught)
+    if (ShowFishCaught == true)
         embed .= "{""name"":""Fish Caught"",""value"":""" . fishCaught . """,""inline"":true}," 
-    if (ShowFishLost)
+    if (ShowFishLost == true)
         embed .= "{""name"":""Fish Lost"",""value"":""" . fishLost . """,""inline"":true}," 
-    if (ShowCaughtLine)
+    if (ShowCaughtLine == true)
         embed .= "{""name"":""Caught Line"",""value"":""" . caughtLine . """,""inline"":false}," 
-    if (ShowLevel)
+    if (ShowLevel == true)
         embed .= "{""name"":""Level"",""value"":""" . levelString . """,""inline"":true}," 
-    if (ShowMoney)
+    if (ShowMoney == true)
         embed .= "{""name"":""Money"",""value"":""" . moneyString . """,""inline"":true}," 
-    if (ShowRunningTime)
+    if (ShowRunningTime == true)
         embed .= "{""name"":""Running Time"",""value"":""" . FormatTime(runningTime) . """,""inline"":true}," 
-    if (ShowTotalFish)
+    if (ShowTotalFish == true)
         embed .= "{""name"":""Total Fish"",""value"":""" . totalfish . """,""inline"":true}," 
-    if (ShowCatchStreak)
+    if (ShowCatchStreak == true)
         embed .= "{""name"":""Catch Streak"",""value"":""" . catchStreak . """,""inline"":true}," 
-    if (ShowBestCatchStreak)
+    if (ShowBestCatchStreak == true)
         embed .= "{""name"":""Best Catch Streak"",""value"":""" . bestCatchStreak . """,""inline"":true}," 
-    if (ShowSuccessRate)
+    if (ShowSuccessRate == true)
         embed .= "{""name"":""Success Rate"",""value"":""" . Round(successRate, 2) . "%""}" 
 
     if (SubStr(embed, -1) = ",")
