@@ -192,7 +192,7 @@ ConfigFolder := LoadConfig
 	}
 	
 lastRunTime := 0 
-runInterval := 1 * 60000 
+runInterval := 17 * 60000 
 CanalCamera := 1
 
 if (AutoLowerGraphics != true and AutoLowerGraphics != false)
