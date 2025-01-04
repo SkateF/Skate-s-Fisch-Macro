@@ -1,4 +1,4 @@
-﻿#SingleInstance Force
+#SingleInstance Force
 #Persistent
 SetKeyDelay, -1
 SetMouseDelay, -1
@@ -7,7 +7,10 @@ SetTitleMatchMode, 2
 CoordMode, Tooltip, Relative
 CoordMode, Pixel, Relative
 CoordMode, Mouse, Relative
-
+screenWidth := A_ScreenWidth
+screenHeight := A_ScreenHeight
+middleX := screenWidth / 2
+middleY := screenHeight / 2
 
 ScriptDirectory := A_ScriptDir  
 
@@ -189,7 +192,7 @@ ConfigFolder := LoadConfig
 	}
 	
 lastRunTime := 0 
-runInterval := 17 * 60000 
+runInterval := 1 * 60000 
 CanalCamera := 1
 
 if (AutoLowerGraphics != true and AutoLowerGraphics != false)
@@ -490,6 +493,7 @@ if (AutoEnableCameraMode == true && FarmCanal == false)
 		send {enter}
 		tooltip, Action: Press Enter, %TooltipX%, %Tooltip8%, 8
 		sleep %AutoCameraDelay%
+		Send, {%NavigationKey%}
 		}
 	}
 RestartMacro:
@@ -528,11 +532,10 @@ RestartMacro:
 					tooltip, Action: Press Enter, %TooltipX%, %Tooltip8%, 8
 					sleep %AutoCameraDelay%
 					Send, {%NavigationKey%}
-		
 					}
 				}
-			MouseMove 500 500, 0 
-			MouseMove 500 500, 0 
+			MouseMove %middleX%, %middleY%, 0 
+			MouseMove %middleX%, %middleY%, 0 
 			sleep 3000
 			send {rbutton up}
 			sleep %AutoLookDelay%
@@ -601,21 +604,22 @@ RestartMacro:
             sleep 100
             send {9 down}
 			sleep 1000
-			MouseMove 500 500, 0 
-			MouseMove 500 500, 0 
+			MouseMove, %middleX%, %middleY%, 0
+			MouseMove, %middleX%, %middleY%, 0
             sleep 100
             send {9 up}
             sleep 100
 		
 
    
-            Click left, 1000, 1000
-	    Click left, 1000, 1000
+            Click, left, %middleX%, %middleY%
 
-            sleep 1000
+            sleep 100
 
 			send {9 down}
-            sleep 100
+			sleep 50
+			Click, left, %middleX%, %middleY%
+            sleep 50
             send {9 up}
             sleep 100
 
@@ -626,7 +630,7 @@ RestartMacro:
             send {1 up}
 			sleep 3000
 
-			Click, 500, 500
+			MouseMove, %middleX%, %middleY%, 0
 		
             sleep 100
             Loop, 6 {
@@ -708,17 +712,15 @@ RestartMacro:
 				{
 				Click, left, %X%, %Y%
 				sleep, 300
-				MouseMove 500 500, 0 
+				MouseMove %middleX%, %middleY%, 0
 				sleep 20
-				MouseMove 500 500, 0 
+				MouseMove %middleX%, %middleY%, 0
 				sleep 20
-				MouseMove 500 500, 0 
+				MouseMove %middleX%, %middleY%, 0
 				sleep 20
 				sleep, 300
 				}
 			sleep, 300
-     
-            StopFarmingAt := A_TickCount + 35 * 60000
 			sleep 2500
         }
 	}
