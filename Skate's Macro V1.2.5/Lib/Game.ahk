@@ -609,7 +609,8 @@ RestartMacro:
 		
 
    
-            Click, 1000, 1000
+            Click left, 1000, 1000
+	    Click left, 1000, 1000
 
             sleep 1000
 
