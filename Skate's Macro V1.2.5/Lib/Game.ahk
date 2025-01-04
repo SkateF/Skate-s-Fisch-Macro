@@ -528,6 +528,8 @@ RestartMacro:
 					tooltip, Action: Press Enter, %TooltipX%, %Tooltip8%, 8
 					sleep %AutoCameraDelay%
 					Send, {%NavigationKey%}
+					sleep 300
+					Click, left
 					}
 				}
 			MouseMove 500 500, 0 
