@@ -179,25 +179,25 @@ z::
 
     embed := "{""embeds"":[{""title"":""Fishing Update"",""fields"":["
 
-    if (ShowFishCaught = true)
+    if (ShowFishCaught == true)
         embed .= "{""name"":""Fish Caught"",""value"":""" . fishCaught . """,""inline"":true}," 
-    if (ShowFishLost = true)
+    if (ShowFishLost == true)
         embed .= "{""name"":""Fish Lost"",""value"":""" . fishLost . """,""inline"":true}," 
-    if (ShowCaughtLine = true)
+    if (ShowCaughtLine == true)
         embed .= "{""name"":""Caught Line"",""value"":""" . caughtLine . """,""inline"":false}," 
-    if (ShowLevel = true)
+    if (ShowLevel == true)
         embed .= "{""name"":""Level"",""value"":""" . levelString . """,""inline"":true}," 
-    if (ShowMoney = true)
+    if (ShowMoney == true)
         embed .= "{""name"":""Money"",""value"":""" . moneyString . """,""inline"":true}," 
-    if (ShowRunningTime = true)
+    if (ShowRunningTime == true)
         embed .= "{""name"":""Running Time"",""value"":""" . FormatTime(runningTime) . """,""inline"":true}," 
-    if (ShowTotalFish = true)
+    if (ShowTotalFish == true)
         embed .= "{""name"":""Total Fish"",""value"":""" . totalfish . """,""inline"":true}," 
-    if (ShowCatchStreak = true)
+    if (ShowCatchStreak == true)
         embed .= "{""name"":""Catch Streak"",""value"":""" . catchStreak . """,""inline"":true}," 
-    if (ShowBestCatchStreak = true)
+    if (ShowBestCatchStreak == true)
         embed .= "{""name"":""Best Catch Streak"",""value"":""" . bestCatchStreak . """,""inline"":true}," 
-    if (ShowSuccessRate = true)
+    if (ShowSuccessRate == true)
         embed .= "{""name"":""Success Rate"",""value"":""" . Round(successRate, 2) . "%""}" 
 
     if (SubStr(embed, -1) = ",")
