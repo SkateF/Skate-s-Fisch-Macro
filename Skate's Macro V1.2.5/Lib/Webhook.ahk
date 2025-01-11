@@ -9592,7 +9592,7 @@ CheckForDeath:
     ImagePath := ScriptDir . "\died.png"
     CoordMode, Pixel, Screen
     SetBatchLines, -1
-    ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *5 %ImagePath%
+    ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *0 %ImagePath%
     if (ErrorLevel = 0) {
 	Process, Close, RobloxPlayerBeta.exe
         MsgBox, 64, CheckForDeath, DEATH DETECTED! closing roblox.

@@ -164,6 +164,7 @@ Gui Add, Button, gLoadConfigFileGeneral x280 y70 w100 h30, Load Config
 Gui Add, Button, gSaveAllSettings x104 y144 w89 h40, Save All Settings
 Gui Add, Button, gStart x240 y144 w89 h40, Start
 Gui Add, Text, x16 y180 w450 h40, Please note that saving all settings applies to only the config and not to the webhook settings. To modify and activate the webhook, you will need to save those settings specifically and run through the camera placement function. (The camera icon at the top right of the game)
+Gui Add, Button, gJoinMacroServer x120 y110 w150 h30, Join the Skate's Fisch Macro Discord Server!
 Gui Tab
 
 GuiControl,, ShowFishCaught, %ShowFishCaught%
@@ -180,6 +181,11 @@ GuiControl,, Webhook, %Webhook%
 
 Gui, Show, AutoSize, Settings
 Return
+
+JoinMacroServer:
+Run, https://discord.gg/srfUWwXUKd
+Return
+
 
 SaveSettingsW:
     GuiControlGet, WebhookDiscord
