@@ -9532,7 +9532,7 @@ Gdip_ErrorHandler(errCode, throwErrorMsg, additionalInfo:="") {
 }
 
 
-tesseractPath := A_ScriptDir . "\Tesseract\tesseract.exe"
+tesseractPath := "C:\Program Files\Tesseract-OCR\tesseract.exe"
 ConfigFile := A_ScriptDir . "\Settings.ini"
 IniRead, Webhook, %ConfigFile%, webhook, Webhook, false
 
