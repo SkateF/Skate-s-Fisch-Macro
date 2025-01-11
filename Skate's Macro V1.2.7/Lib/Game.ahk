@@ -488,7 +488,7 @@ tooltip, , , , 10
 tooltip, Current Task: AutoEnableCameraMode, %TooltipX%, %Tooltip7%, 7
 tooltip, Right Count: 0/10, %TooltipX%, %Tooltip9%, 9
 rightcounter := 0
-if (AutoEnableCameraMode == true && FarmCanal == false && autonight == false)
+if (AutoEnableCameraMode == true && FarmCanal == false)
 	{
 	PixelSearch, , , CameraCheckLeft, CameraCheckTop, CameraCheckRight, CameraCheckBottom, 0xFFFFFF, 0, Fast
 	if (ErrorLevel == 0)
