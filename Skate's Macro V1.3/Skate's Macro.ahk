@@ -127,7 +127,7 @@ Please make sure that when FARM CANAL is enabled:
 -> Equip the Winter Cloak and the Advanced Oxygen Tank.
 -> Have conches in your 9th inventory slot (uses a conch about every 17 minutes, so buy them at the start accordingly).
 -> Run the camera placement in CONFIG TAB
--> Make sure you are facing SOUTH!
+-> Make sure you are facing North!
 -? HAVE NO CAMERA SHAKE ON IN SETTINGS!!!!!
 
 == Once loaded, just press P to start.
