@@ -1,4 +1,4 @@
-﻿;________  ___  __    ________  _________  _______   ________           ________ ___  ________  ________  ___  ___          _____ ______   ________  ________  ________  ________          ___      ___  _____     ________     
+;________  ___  __    ________  _________  _______   ________           ________ ___  ________  ________  ___  ___          _____ ______   ________  ________  ________  ________          ___      ___  _____     ________     
 ;|\   ____\|\  \|\  \ |\   __  \|\___   ___\\  ___ \ |\   ____\         |\  _____\\  \|\   ____\|\   ____\|\  \|\  \        |\   _ \  _   \|\   __  \|\   ____\|\   __  \|\   __  \        |\  \    /  /|/ __  \   |\_____  \    
 ;\ \  \___|\ \  \/  /|\ \  \|\  \|___ \  \_\ \   __/|\ \  \___|_        \ \  \__/\ \  \ \  \___|\ \  \___|\ \  \\\  \       \ \  \\\__\ \  \ \  \|\  \ \  \___|\ \  \|\  \ \  \|\  \       \ \  \  /  / /\/_|\  \  \|____|\ /_   
 ; \ \_____  \ \   ___  \ \   __  \   \ \  \ \ \  \_|/_\ \_____  \        \ \   __\\ \  \ \_____  \ \  \    \ \   __  \       \ \  \\|__| \  \ \   __  \ \  \    \ \   _  _\ \  \\\  \       \ \  \/  / /\|/ \ \  \       \|\  \  
@@ -20,6 +20,14 @@ screenWidth := A_ScreenWidth
 screenHeight := A_ScreenHeight
 middleX := screenWidth / 2
 middleY := screenHeight / 2
+WindowWidth := A_ScreenWidth
+WindowHeight := A_ScreenHeight
+
+ProgressAreaLeft := WindowWidth / 2.55
+ProgressAreaRight := WindowWidth / 1.63
+ProgressAreaTop := WindowHeight / 1.13
+ProgressAreaBottom := WindowHeight / 1.08
+
 
 ScriptDirectory := A_ScriptDir  
 
@@ -503,11 +511,7 @@ tooltip, , , , 10
 tooltip, Current Task: AutoEnableCameraMode, %TooltipX%, %Tooltip7%, 7
 tooltip, Right Count: 0/10, %TooltipX%, %Tooltip9%, 9
 rightcounter := 0
-<<<<<<< HEAD:Skate's Macro V1.3/Lib/Game.ahk
 if (AutoEnableCameraMode == true)
-=======
-if (AutoEnableCameraMode == true && FarmCanal == false)
->>>>>>> 03ed2013e2c11c48ad6a61289dc23209a04effe8:Skate's Macro V1.2.7/Lib/Game.ahk
 	{
 		Loop, 5 { 
 			PixelSearch, Px, Py, %CameraCheckLeft%, %CameraCheckTop%, %CameraCheckRight%, %CameraCheckBottom%, 0xFFFFFF, 1, Fast
@@ -912,6 +916,15 @@ if (BarCalcFailsafeCounter >= BarCalculationFailsafe)
 return
 
 BarMinigame:
+PixelSearch, ProgressAreaX, , ProgressAreaRight, ProgressAreaTop, ProgressAreaLeft, ProgressAreaBottom, 0xFFFFFF, 1, Fast
+    if !ErrorLevel {
+        if (ProgressAreaX < (A_ScreenWidth / 2)) {
+            LostVar := true
+        } else {
+            LostVar := false
+        }
+    }
+}
 if (baitfix == true) {
 	sleep 900
 }
@@ -982,6 +995,15 @@ tooltip, |, %MaxRightBar%, %FishBarTooltipHeight%, 17
 
 BarMinigame2:
 sleep 1
+PixelSearch, ProgressAreaX, , ProgressAreaRight, ProgressAreaTop, ProgressAreaLeft, ProgressAreaBottom, 0xFFFFFF, 1, Fast
+    if !ErrorLevel {
+        if (ProgressAreaX < (A_ScreenWidth / 2)) {
+            LostVar := true
+        } else {
+            LostVar := false
+        }
+    }
+}
 PixelSearch, FishX, , FishBarLeft, FishBarTop, FishBarRight, FishBarBottom, 0x5B4B43, %FishBarColorTolerance%, Fast
 if (ErrorLevel == 0)
 	{
@@ -1251,12 +1273,6 @@ if (ErrorLevel == 0)
 		}
 			
 		}
-<<<<<<< HEAD:Skate's Macro V1.3/Lib/Game.ahk
 		}
 		Goto, RestartMacro
-=======
-	}
-		goto, RestartMacro
-	}
-	
->>>>>>> 03ed2013e2c11c48ad6a61289dc23209a04effe8:Skate's Macro V1.2.7/Lib/Game.ahk
+
