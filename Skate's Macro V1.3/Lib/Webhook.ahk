@@ -9754,7 +9754,6 @@ Class CreateFormData{
 	}
 }
   
-<<<<<<< HEAD:Skate's Macro V1.3/Lib/Webhook.ahk
 CaptureScreen(outputFile, x, y, width, height) {
     hdc := DllCall("GetDC", "Ptr", 0, "Ptr")
     hdcMem := DllCall("CreateCompatibleDC", "Ptr", hdc, "Ptr")
@@ -9768,7 +9767,6 @@ CaptureScreen(outputFile, x, y, width, height) {
     DllCall("DeleteDC", "Ptr", hdcMem)
     DllCall("ReleaseDC", "Ptr", 0, "Ptr", hdc)
 }
-=======
   CaptureScreen(outputFile, x, y, width, height) {
       ; Create a bitmap to store the screenshot
       hdc := DllCall("GetDC", "Ptr", 0, "Ptr")
@@ -9784,4 +9782,3 @@ CaptureScreen(outputFile, x, y, width, height) {
       DllCall("ReleaseDC", "Ptr", 0, "Ptr", hdc)
   }
   
->>>>>>> 03ed2013e2c11c48ad6a61289dc23209a04effe8:Skate's Macro V1.2.7/Lib/Webhook.ahk
