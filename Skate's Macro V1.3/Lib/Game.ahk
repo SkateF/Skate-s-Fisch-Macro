@@ -503,7 +503,11 @@ tooltip, , , , 10
 tooltip, Current Task: AutoEnableCameraMode, %TooltipX%, %Tooltip7%, 7
 tooltip, Right Count: 0/10, %TooltipX%, %Tooltip9%, 9
 rightcounter := 0
+<<<<<<< HEAD:Skate's Macro V1.3/Lib/Game.ahk
 if (AutoEnableCameraMode == true)
+=======
+if (AutoEnableCameraMode == true && FarmCanal == false)
+>>>>>>> 03ed2013e2c11c48ad6a61289dc23209a04effe8:Skate's Macro V1.2.7/Lib/Game.ahk
 	{
 		Loop, 5 { 
 			PixelSearch, Px, Py, %CameraCheckLeft%, %CameraCheckTop%, %CameraCheckRight%, %CameraCheckBottom%, 0xFFFFFF, 1, Fast
@@ -1247,5 +1251,12 @@ if (ErrorLevel == 0)
 		}
 			
 		}
+<<<<<<< HEAD:Skate's Macro V1.3/Lib/Game.ahk
 		}
 		Goto, RestartMacro
+=======
+	}
+		goto, RestartMacro
+	}
+	
+>>>>>>> 03ed2013e2c11c48ad6a61289dc23209a04effe8:Skate's Macro V1.2.7/Lib/Game.ahk
