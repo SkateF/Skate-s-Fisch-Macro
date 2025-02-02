@@ -9767,18 +9767,4 @@ CaptureScreen(outputFile, x, y, width, height) {
     DllCall("DeleteDC", "Ptr", hdcMem)
     DllCall("ReleaseDC", "Ptr", 0, "Ptr", hdc)
 }
-  CaptureScreen(outputFile, x, y, width, height) {
-      ; Create a bitmap to store the screenshot
-      hdc := DllCall("GetDC", "Ptr", 0, "Ptr")
-      hdcMem := DllCall("CreateCompatibleDC", "Ptr", hdc, "Ptr")
-      hBitmap := DllCall("CreateCompatibleBitmap", "Ptr", hdc, "Int", width, "Int", height, "Ptr")
-      DllCall("SelectObject", "Ptr", hdcMem, "Ptr", hBitmap)
-      DllCall("BitBlt", "Ptr", hdcMem, "Int", 0, "Int", 0, "Int", width, "Int", height, "Ptr", hdc, "Int", x, "Int", y, "UInt", 0x00CC0020)
-      pBitmap := Gdip_CreateBitmapFromHBITMAP(hBitmap)
-      Gdip_SaveBitmapToFile(pBitmap, outputFile)
-      Gdip_DisposeImage(pBitmap)
-      DllCall("DeleteObject", "Ptr", hBitmap)
-      DllCall("DeleteDC", "Ptr", hdcMem)
-      DllCall("ReleaseDC", "Ptr", 0, "Ptr", hdc)
-  }
-  
+
