@@ -916,19 +916,19 @@ if (BarCalcFailsafeCounter >= BarCalculationFailsafe)
 return
 
 BarMinigame:
-PixelSearch, ProgressAreaX, , ProgressAreaRight, ProgressAreaTop, ProgressAreaLeft, ProgressAreaBottom, 0xFFFFFF, 1, Fast
-    if !ErrorLevel {
-        if (ProgressAreaX < (A_ScreenWidth / 2)) {
-            LostVar := true
-        } else {
-            LostVar := false
-        }
+PixelSearch, ProgressAreaX, ProgressAreaY, ProgressAreaLeft, ProgressAreaTop, ProgressAreaRight, ProgressAreaBottom, 0xFFFFFF, 1, Fast
+if !ErrorLevel {
+    if (ProgressAreaX < (A_ScreenWidth / 2)) {
+        LostVar := true
+    } else {
+        LostVar := false
     }
 }
-if (baitfix == true) {
-	sleep 900
+if (baitfix) {
+    Sleep 900
 }
-If (Seraphic == true) {
+
+if (Seraphic) {
     Loop, 48
     {
         Send {LButton Down}
@@ -1003,7 +1003,7 @@ PixelSearch, ProgressAreaX, , ProgressAreaRight, ProgressAreaTop, ProgressAreaLe
             LostVar := false
         }
     }
-}
+
 PixelSearch, FishX, , FishBarLeft, FishBarTop, FishBarRight, FishBarBottom, 0x5B4B43, %FishBarColorTolerance%, Fast
 if (ErrorLevel == 0)
 	{
